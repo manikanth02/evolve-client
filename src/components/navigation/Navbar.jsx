@@ -28,12 +28,10 @@ export const Navbar = () => {
 
   const navLinks = [
     { label: 'Home', path: '/' },
-    { label: 'Our Story', path: '/our-story' },
-    { label: 'Programmes', path: '/programmes' },
-    { label: 'Wisdom Hub', path: '/wisdom-hub' },
-    { label: 'Our Impact', path: '/impact' },
+    { label: 'Our Journey', path: '/our-journey' },
+    { label: 'Our Speakers', path: '/speakers' },
+    { label: 'Our Programmes', path: '/programmes' },
     { label: 'For Organisations', path: '/for-organisations' },
-    { label: 'Contact', path: '/contact' },
   ];
 
   return (

@@ -8,8 +8,8 @@ export const CTASection = ({
   subtitle = 'Whether you are a student seeking direction, a young professional seeking focus, or an organisation seeking purposeful leadership, Evolve Club welcomes you.',
   primaryCtaText = 'Explore Our Programmes',
   primaryCtaTo = '/programmes',
-  secondaryCtaText = 'Connect With Us',
-  secondaryCtaTo = '/contact'
+  secondaryCtaText = 'Get Involved',
+  secondaryCtaTo = '/get-involved'
 }) => {
   return (
     <section className="relative py-20 bg-gradient-to-b from-forest-950 via-forest-900 to-forest-950 overflow-hidden border-t border-gold-500/20">

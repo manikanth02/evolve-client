@@ -2,6 +2,7 @@
  * Verified fallback data for frontend offline resilience.
  * Ensures the website functions smoothly even if the backend server is not running.
  */
+import { cloudinaryImages, getImageUrl, optimizeCloudinaryUrl } from './cloudinaryImages';
 
 export const mockProgrammes = [
   {
@@ -86,102 +87,19 @@ export const mockProgrammes = [
   }
 ];
 
-export const mockArticles = [
-  {
-    title: 'Mastering Action Without the Anxiety of Results',
-    slug: 'mastering-action-without-anxiety-results',
-    excerpt: 'How the timeless principle of Karmanye Vadhikaraste liberates young minds from burnout, paralysis, and outcome obsession.',
-    content: `In a hyper-competitive world, young students and professionals are taught that their worth equals their immediate outcomes: the grades they score, the job offers they receive, the likes they gather online.
+import { articlesData } from '../data/Article/index.js';
 
-The Bhagavad Gita offers a radical alternative that modern psychology is only now catching up to: focus entirely on the quality of your effort, and detach your identity from the outcome.
+export const mockArticles = articlesData;
 
-When you obsess over results, your attention is divided between the present task and future anxiety. By returning all your cognitive energy to what is in your hands right now, quality soars, stress plummets, and true mastery is born.`,
-    category: 'Bhagavad Gita Wisdom',
-    verseReference: 'Bhagavad Gita, Chapter 2, Verse 47',
-    verseText: 'कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।\nमा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥\n(Karmany evādhikāras te mā phaleṣu kadācana,\nmā karma-phala-hetur bhūr mā te saṅgo ’stv akarmaṇi)',
-    practicalApplication: 'Before starting study or work today, take 3 deep breaths and state: "I will give 100% focused devotion to this task for the next 45 minutes, with zero fixation on the verdict."',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
-    isPublished: true,
-    publishedAt: '2026-01-15'
-  },
-  {
-    title: 'The Battle with the Mind: Friend or Foe?',
-    slug: 'the-battle-with-the-mind-friend-or-foe',
-    excerpt: 'Understanding the mechanics of your mind and how to train it to be your strongest ally rather than your worst saboteur.',
-    content: `Arjuna once expressed to Krishna the struggle felt by every modern youth: "The mind is restless, turbulent, obstinate, and very strong, O Krishna. It seems more difficult to control than the wind."
-
-Krishna did not dismiss Arjuna’s struggle. He validated it, but gave two precise remedies: Abhyasa (consistent practice) and Vairagya (healthy detachment).
-
-Mind mastery is not about suppressing thoughts violently; it is about observing them without knee-jerk reactivity and gently redirecting the intellect toward purposeful action.`,
-    category: 'Mind & Emotional Balance',
-    verseReference: 'Bhagavad Gita, Chapter 6, Verse 5-6',
-    verseText: 'उद्धरेदात्मनात्मानं नात्मानमवसादयेत्।\nआत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः॥\n(Uddhared ātmanātmānaṁ nātmānam avasādayet,\nātmaiva hy ātmano bandhur ātmaiva ripur ātmanaḥ)',
-    practicalApplication: 'When you notice anxious self-talk today, do not fight it. Name it: "This is a passing thought, not who I am." Then refocus on your immediate duty.',
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80',
-    isPublished: true,
-    publishedAt: '2026-02-01'
-  },
-  {
-    title: 'The Anatomy of True Leadership: Leading by Example',
-    slug: 'anatomy-of-true-leadership-leading-by-example',
-    excerpt: 'Why standard-setting through personal integrity outlasts authority, titles, and charisma.',
-    content: `Whatever standards a great person sets by their conduct, common people naturally follow. People rarely listen to what we say; they mirror what we do.
-
-In Evolve Club, youth leadership is not viewed through the lens of dominance or high-sounding slogans. It is demonstrated in keeping commitments, taking responsibility for mistakes, treating colleagues with dignity, and stepping forward when others hesitate.`,
-    category: 'Modern Leadership',
-    verseReference: 'Bhagavad Gita, Chapter 3, Verse 21',
-    verseText: 'यद‍्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः।\nस यत्प्रमाणं कुरुते लोकस्तदनुवर्तते॥\n(Yad yad ācarati śreṣṭhas tat tad evetaro janaḥ,\nsa yat pramāṇaṁ kurute lokas tad anuvartate)',
-    practicalApplication: 'Identify one small habit—such as arriving punctually or keeping your desk organized—and practice it impeccably this week as a silent act of personal leadership.',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
-    isPublished: true,
-    publishedAt: '2026-02-18'
-  },
-  {
-    title: 'The Power of Equanimity: Staying Centered in Joy and Sorrow',
-    slug: 'the-power-of-equanimity-joy-and-sorrow',
-    excerpt: 'Developing psychological equilibrium (Samatvam) in the face of praise, blame, success, and setback.',
-    content: `Life inevitably brings seasons of high validation followed by periods of dry testing. If a young person’s emotional foundation rises and falls with external conditions, peace is impossible.
-
-Samatva (equanimity) is defined in the Gita as yoga itself. It is the steady posture of an ocean that receives thousands of rivers without overflowing its banks. Learn how equanimity builds invincible self-confidence.`,
-    category: 'Habits & Character',
-    verseReference: 'Bhagavad Gita, Chapter 2, Verse 48',
-    verseText: 'योगस्थः कुरु कर्माणि सङ्गं त्यक्त्वा धनञ्जय।\nसिद्ध्यसिद्ध्योः समो भूत्वा समत्वं योग उच्यते॥\n(Yoga-sthaḥ kuru karmāṇi saṅgaṁ tyaktvā dhanañjaya,\nsiddhy-asiddhyoḥ samo bhūtvā samatvaṁ yoga ucyate)',
-    practicalApplication: 'When receiving sudden praise or criticism this week, pause for 10 seconds before reacting. Remind yourself: "This is transient feedback. My duty remains clear."',
-    image: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=1200&q=80',
-    isPublished: true,
-    publishedAt: '2026-03-05'
-  }
-];
-
-export const mockActivities = [
-  {
-    id: '1',
-    title: 'Youth Reflection & Dialogue Circle',
-    description: 'An open-floor session exploring life dilemmas, focus hurdles, and constructive habits through real peer conversations.',
-    date: '2026-02-20',
-    location: 'Chandigarh Community Space',
-    images: ['https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80'],
-    category: 'Interactive Discussion',
-    isPublished: true
-  },
-  {
-    id: '2',
-    title: 'Mind Management & Breathwork Intensive',
-    description: 'Practical training on pranayama, mindfulness, and cognitive attention for college students and young professionals.',
-    date: '2026-03-12',
-    location: 'Mohali Learning Centre',
-    images: ['https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80'],
-    category: 'Workshop',
-    isPublished: true
-  },
-  {
-    id: '3',
-    title: 'Community Cleanliness & Tree Nurturance Drive',
-    description: 'Volunteers gathered for a morning of environmental seva, planting saplings and cleaning local public green areas.',
-    date: '2026-03-28',
-    location: 'Chandigarh Green Corridor',
-    images: ['https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80'],
-    category: 'Community Initiative',
-    isPublished: true
-  }
-];
+export const mockActivities = cloudinaryImages.map(img => ({
+  id: img.id,
+  title: img.title,
+  description: img.caption || img.alt,
+  date: img.date,
+  location: img.location,
+  images: [optimizeCloudinaryUrl(getImageUrl(img), { width: 800 })],
+  category: img.category,
+  alt: img.alt,
+  section: img.section,
+  isPublished: true
+}));

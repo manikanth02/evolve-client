@@ -100,15 +100,19 @@ export const api = {
   },
 
   // Activities
-  async getActivities() {
+  async getActivities(params = {}) {
     try {
-      const response = await apiClient.get('/activities');
+      const response = await apiClient.get('/activities', { params });
       return response.data;
     } catch (error) {
       console.warn('API getActivities fallback triggered:', error.message);
+      let list = [...mockActivities];
+      if (params.category && params.category !== 'All') {
+        list = list.filter(a => a.category?.toLowerCase() === params.category.toLowerCase());
+      }
       return {
         success: true,
-        data: { activities: mockActivities },
+        data: { activities: list },
         source: 'local_fallback'
       };
     }

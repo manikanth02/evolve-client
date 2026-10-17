@@ -91,7 +91,10 @@ export const ForOrganisationsPage = () => {
 
     try {
       setSubmitting(true);
-      const res = await api.submitEnquiry(formData);
+      const res = await api.submitEnquiry({
+        ...formData,
+        interestType: 'Institutional Collaboration'
+      });
       setSubmitSuccess(true);
       setSubmitMessage(res.message || 'Your organisation enquiry has been received! Our coordination team will reach out within 24–48 hours.');
       setFormData({
@@ -115,20 +118,31 @@ export const ForOrganisationsPage = () => {
     <div className="min-h-screen bg-cream-50 text-forest-950 pt-24 pb-20">
       {/* Header Banner */}
       <section className="bg-forest-950 text-cream-50 py-20 relative overflow-hidden border-b border-gold-500/20">
-        <div className="absolute inset-0 bg-grain opacity-20" />
+        <div className="absolute inset-0 bg-grain opacity-20 pointer-events-none" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
             <Building2 className="w-3.5 h-3.5" />
             <span>Corporate & Institutional Collaborations</span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50">
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50 leading-tight">
             Empowering Teams Through <span className="gold-text-gradient">Wisdom & Character</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
-            Thoughtfully crafted workshops for founders, HR leaders, and managers in Chandigarh, Mohali, and beyond. Grounded in mental discipline, purpose, and ethical leadership.
+            Practical workshops for founders, HR leaders, and managers in Chandigarh, Mohali, and beyond. Grounded in mental discipline, composure, and ethical leadership.
           </p>
+
+          <div className="pt-2">
+            <Button
+              to="/get-involved?interest=Institutional+Collaboration"
+              variant="gold"
+              size="md"
+              icon={ArrowRight}
+            >
+              Collaborate With Us
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -137,7 +151,7 @@ export const ForOrganisationsPage = () => {
         <SectionHeading
           badge="Tailored Modules"
           title="Core Workshop Offerings"
-          subtitle="Designed to address the root causes of workplace burnout, reactive decision-making, and organizational cynicism."
+          subtitle="Targeted modules addressing workplace burnout, focus depletion, and reactive leadership."
           theme="light"
           align="center"
         />
@@ -162,8 +176,14 @@ export const ForOrganisationsPage = () => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-cream-200 flex items-center justify-between text-xs text-forest-700/60 font-medium">
-                <span>Available Online / Offline</span>
-                <span>Custom Duration</span>
+                <span>Online / Offline</span>
+                <Button
+                  to={`/get-involved?interest=Institutional+Collaboration&programme=${encodeURIComponent(module.title)}`}
+                  variant="outline"
+                  size="sm"
+                >
+                  Enquire
+                </Button>
               </div>
             </AnimatedSection>
           ))}

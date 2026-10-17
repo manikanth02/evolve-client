@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, BookOpen, Sparkles, Calendar, CheckCircle2, Share2, Quote } from 'lucide-react';
+import { ArrowLeft, BookOpen, Sparkles, Calendar, CheckCircle2, Share2, Quote, User, Clock } from 'lucide-react';
 import { Button } from '../components/common/Button';
 import { LoadingIndicator } from '../components/common/LoadingIndicator';
 import { ErrorMessage } from '../components/common/ErrorMessage';
+import { ArticleContentRenderer } from '../components/common/ArticleContentRenderer';
 import { api } from '../services/api';
 
 export const WisdomDetailPage = () => {
@@ -55,25 +56,27 @@ export const WisdomDetailPage = () => {
       <div className="min-h-screen bg-cream-50 pt-32 pb-20 px-4">
         <ErrorMessage message={error || 'Article not found'} />
         <div className="text-center mt-6">
-          <Link to="/wisdom-hub" className="text-gold-600 hover:text-gold-700 font-medium inline-flex items-center gap-1.5 text-sm">
+          <Link to="/programmes#wisdom-reflections" className="text-gold-600 hover:text-gold-700 font-medium inline-flex items-center gap-1.5 text-sm">
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to Wisdom Hub</span>
+            <span>Back to Programmes & Wisdom</span>
           </Link>
         </div>
       </div>
     );
   }
 
+  const cleanExcerpt = article.excerpt ? article.excerpt.replace(/[*#_`~>]/g, '').trim() : '';
+
   return (
     <div className="min-h-screen bg-cream-50 text-forest-950 pt-24 pb-20">
       {/* Back button link */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex items-center justify-between">
         <Link
-          to="/wisdom-hub"
+          to="/programmes#wisdom-reflections"
           className="inline-flex items-center gap-2 text-sm font-semibold text-forest-800 hover:text-gold-600 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Wisdom Hub</span>
+          <span>Back to Programmes & Wisdom</span>
         </Link>
 
         <button
@@ -93,6 +96,18 @@ export const WisdomDetailPage = () => {
             <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase bg-gold-500/10 text-gold-600 border border-gold-500/30">
               {article.category}
             </span>
+            {article.author && (
+              <span className="inline-flex items-center gap-1 text-xs text-forest-900 font-semibold bg-forest-900/5 px-2.5 py-1 rounded-full border border-forest-900/10">
+                <User className="w-3.5 h-3.5 text-gold-600" />
+                <span>{article.author}</span>
+              </span>
+            )}
+            {article.readTime && (
+              <span className="inline-flex items-center gap-1 text-xs text-forest-800/70 font-mono">
+                <Clock className="w-3.5 h-3.5 text-gold-600" />
+                <span>{article.readTime}</span>
+              </span>
+            )}
             {article.publishedAt && (
               <span className="flex items-center gap-1 text-xs text-forest-800/60 font-mono">
                 <Calendar className="w-3.5 h-3.5" />
@@ -109,18 +124,26 @@ export const WisdomDetailPage = () => {
             {article.title}
           </h1>
 
-          <p className="text-lg sm:text-xl text-forest-800/80 leading-relaxed font-light">
-            {article.excerpt}
-          </p>
+          {cleanExcerpt && (
+            <p className="text-lg sm:text-xl text-forest-800/80 leading-relaxed font-light">
+              {cleanExcerpt}
+            </p>
+          )}
         </div>
 
-        {/* Featured Image */}
+        {/* Featured Image - Preserves Complete Artwork Without Cropping */}
         {article.image && (
-          <div className="w-full h-72 sm:h-96 rounded-3xl overflow-hidden mb-10 shadow-md">
+          <div className="relative w-full rounded-3xl overflow-hidden mb-10 shadow-xl bg-forest-950 border border-gold-500/20 flex items-center justify-center p-3 sm:p-5 min-h-[280px] max-h-[640px]">
+            {/* Ambient Blurred Backdrop for full cinematic depth without dead bars */}
+            <div
+              className="absolute inset-0 bg-cover bg-center blur-2xl opacity-30 scale-110 pointer-events-none"
+              style={{ backgroundImage: `url("${article.image}")` }}
+            />
+            {/* Full Uncropped High-Res Image */}
             <img
               src={article.image}
               alt={article.title}
-              className="w-full h-full object-cover"
+              className="relative z-10 max-h-[580px] w-auto max-w-full rounded-2xl object-contain shadow-2xl mx-auto transition-transform duration-500"
             />
           </div>
         )}
@@ -156,15 +179,15 @@ export const WisdomDetailPage = () => {
           </div>
         )}
 
-        {/* Main Article Body */}
-        <div className="prose prose-lg max-w-none text-forest-900 leading-relaxed whitespace-pre-line space-y-4">
-          {article.content}
+        {/* Main Article Body Rendered with ArticleContentRenderer */}
+        <div className="max-w-none text-forest-900 leading-relaxed">
+          <ArticleContentRenderer content={article.content} />
         </div>
 
         {/* Footer Navigation */}
         <div className="mt-14 pt-8 border-t border-cream-300 flex items-center justify-between">
           <Link
-            to="/wisdom-hub"
+            to="/programmes#wisdom-reflections"
             className="text-sm font-semibold text-gold-600 hover:text-gold-700 flex items-center gap-1.5"
           >
             <ArrowLeft className="w-4 h-4" />

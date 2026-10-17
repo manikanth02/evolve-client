@@ -25,6 +25,7 @@ import { ImpactCard } from '../components/common/ImpactCard';
 import { EmptyState } from '../components/common/EmptyState';
 import { LoadingIndicator } from '../components/common/LoadingIndicator';
 import { CTASection } from '../components/sections/CTASection';
+import { SpeakerSection } from '../components/speakers/SpeakerSection';
 import { api } from '../services/api';
 
 export const HomePage = () => {
@@ -35,6 +36,7 @@ export const HomePage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    document.title = 'Evolve Club — Youth Empowerment, Purposeful Living & Lasting Transformation';
     const fetchData = async () => {
       try {
         setLoading(true);
@@ -102,15 +104,31 @@ export const HomePage = () => {
             Helping young people grow with wisdom, purpose, and positive action.
           </motion.p>
 
+          {/* Bhagavad Gita Shloka */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="max-w-2xl mx-auto px-5 py-4 rounded-2xl bg-forest-900/60 border border-gold-500/30 backdrop-blur-sm shadow-forest-deep relative"
+          >
+            <Quote className="w-5 h-5 text-gold-400/50 mx-auto mb-2" />
+            <blockquote className="font-serif italic text-base sm:text-lg text-cream-100/95 leading-relaxed tracking-wide">
+              “For one who has conquered the mind, it is the best of friends; but for one who has failed to do so, it will remain the greatest enemy.”
+            </blockquote>
+            <cite className="block mt-2.5 text-xs sm:text-sm font-mono tracking-wider text-gold-400 not-italic font-semibold">
+              — Bhagavad Gita 6.6
+            </cite>
+          </motion.div>
+
           {/* Primary Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           >
             <Button
-              to="/our-story"
+              to="/our-journey"
               variant="gold"
               size="lg"
               icon={ArrowRight}
@@ -213,7 +231,8 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* 4. Featured Programmes Section */}
+      {/* 4. Featured Programmes Section (Commented Out) */}
+      {/*
       <section className="py-24 bg-forest-950 text-cream-50 relative border-t border-gold-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -247,6 +266,7 @@ export const HomePage = () => {
           )}
         </div>
       </section>
+      */}
 
       {/* 5. Bhagavad Gita Wisdom Spotlight */}
       <section className="py-24 bg-cream-50 relative overflow-hidden">
@@ -296,10 +316,10 @@ export const HomePage = () => {
                 Recent Insights & Reflections
               </h3>
               <Link
-                to="/wisdom-hub"
+                to="/programmes#wisdom-reflections"
                 className="text-sm font-semibold text-gold-600 hover:text-gold-700 flex items-center gap-1"
               >
-                <span>Visit Wisdom Hub</span>
+                <span>Explore Wisdom Reflections</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -313,7 +333,8 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* 6. Activities & Community Showcase */}
+      {/* 6. Activities & Community Showcase (Commented Out) */}
+      {/*
       <section className="py-24 bg-forest-900 text-cream-50 relative border-y border-gold-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -374,10 +395,10 @@ export const HomePage = () => {
 
                   <div className="pt-4 border-t border-forest-800">
                     <Link
-                      to="/impact"
+                      to="/our-journey"
                       className="text-xs font-semibold text-gold-400 hover:text-gold-300 flex items-center gap-1"
                     >
-                      <span>Learn about our community impact</span>
+                      <span>Explore Our Journey & Field Work</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -387,38 +408,10 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
+      */}
 
-      {/* 7. Impact Section (Strict Real Data Policy) */}
-      <section className="py-24 bg-cream-100 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            badge="Authentic & Transparent"
-            title="Our Commitment to"
-            highlightWord="Genuine Social Impact"
-            subtitle="We believe in radical transparency. We do not manufacture participant counts or claim unverified credentials."
-            theme="light"
-            align="center"
-          />
-
-          <div className="mt-14">
-            {impactData.hasVerifiedData && impactData.metrics.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {impactData.metrics.map((m, i) => (
-                  <ImpactCard key={i} metric={m} />
-                ))}
-              </div>
-            ) : (
-              <EmptyState
-                icon={TrendingUp}
-                title="Verified Field Data in Progress"
-                description="Evolve Club conducts real programs with real youth. All reporting metrics and testimonials are verified through rigorous post-session evaluations before publication."
-                actionText="Get Involved in Our Next Initiative"
-                actionTo="/get-involved"
-              />
-            )}
-          </div>
-        </div>
-      </section>
+      {/* 7. Reusable Facilitators & Mentors Section */}
+      <SpeakerSection />
 
       {/* 8. Corporate Collaboration Preview */}
       <section className="py-20 bg-forest-950 text-cream-50 relative border-t border-gold-500/20">

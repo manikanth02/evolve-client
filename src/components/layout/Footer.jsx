@@ -42,16 +42,16 @@ export const Footer = () => {
             </h4>
             <ul className="space-y-2.5 text-sm text-cream-200/70">
               <li>
-                <Link to="/our-story" className="hover:text-gold-400 transition-colors">Our Story & Philosophy</Link>
+                <Link to="/our-journey" className="hover:text-gold-400 transition-colors">Our Journey & Ethos</Link>
               </li>
               <li>
-                <Link to="/programmes" className="hover:text-gold-400 transition-colors">Programmes & Workshops</Link>
+                <Link to="/programmes" className="hover:text-gold-400 transition-colors">Our Programmes</Link>
               </li>
               <li>
-                <Link to="/wisdom-hub" className="hover:text-gold-400 transition-colors">Bhagavad Gita Wisdom Hub</Link>
+                <Link to="/programmes#wisdom-reflections" className="hover:text-gold-400 transition-colors">Bhagavad Gita Wisdom</Link>
               </li>
               <li>
-                <Link to="/impact" className="hover:text-gold-400 transition-colors">Our Impact & Activities</Link>
+                <Link to="/speakers" className="hover:text-gold-400 transition-colors">Our Speakers & Mentors</Link>
               </li>
             </ul>
           </div>
@@ -59,7 +59,7 @@ export const Footer = () => {
           {/* Collaboration */}
           <div>
             <h4 className="font-serif text-base font-semibold text-cream-50 mb-4 tracking-wide">
-              Collaborate
+              Participate
             </h4>
             <ul className="space-y-2.5 text-sm text-cream-200/70">
               <li>
@@ -69,13 +69,13 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/get-involved" className="hover:text-gold-400 transition-colors">Youth Mentorship</Link>
+                <Link to="/get-involved?interest=Mentorship" className="hover:text-gold-400 transition-colors">Youth Mentorship</Link>
               </li>
               <li>
-                <Link to="/get-involved" className="hover:text-gold-400 transition-colors">Volunteer with Us</Link>
+                <Link to="/get-involved?interest=Volunteering" className="hover:text-gold-400 transition-colors">Volunteer in Seva</Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-gold-400 transition-colors">General Enquiries</Link>
+                <Link to="/get-involved?interest=General+Enquiry" className="hover:text-gold-400 transition-colors">General Enquiries</Link>
               </li>
             </ul>
           </div>
@@ -99,7 +99,7 @@ export const Footer = () => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream-200/50">
           <p>© {currentYear} Evolve Club. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link to="/contact" className="hover:text-cream-200 transition-colors">Contact Coordination Team</Link>
+            <Link to="/get-involved?interest=General+Enquiry" className="hover:text-cream-200 transition-colors">Contact Coordination Team</Link>
             <span>•</span>
             <span className="text-cream-200/40">Chandigarh & Mohali Initiative</span>
           </div>
