@@ -71,67 +71,67 @@ export const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cream-50 text-forest-950 pt-24 pb-20">
+    <div className="min-h-screen bg-cream-50 text-forest-950 pt-20 sm:pt-24 pb-14 sm:pb-20">
       {/* Header Banner */}
-      <section className="bg-forest-950 text-cream-50 py-20 relative overflow-hidden border-b border-gold-500/20">
+      <section className="bg-forest-950 text-cream-50 py-12 sm:py-20 relative overflow-hidden border-b border-gold-500/20">
         <div className="absolute inset-0 bg-grain opacity-20" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-4 sm:space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
             <Mail className="w-3.5 h-3.5" />
             <span>Coordination & Inquiries</span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50">
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50 leading-tight">
             Connect With <span className="gold-text-gradient">Evolve Club</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-sm sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
             Have questions about our philosophy, upcoming cohorts, or community service drives? Send us a message below.
           </p>
         </div>
       </section>
 
       {/* Main Grid: Info + Form */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <section className="py-10 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Left Column: Contact Channels */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="space-y-4">
-              <span className="text-xs font-mono uppercase tracking-widest text-gold-600 font-semibold">
+          <div className="lg:col-span-5 space-y-6 sm:space-y-8">
+            <div className="space-y-3 sm:space-y-4">
+              <span className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-gold-600 font-semibold">
                 Direct Communication
               </span>
-              <h3 className="font-serif text-3xl font-bold text-forest-950">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-forest-950">
                 We Welcome Thoughtful Conversations
               </h3>
-              <p className="text-base text-forest-800/80 leading-relaxed">
+              <p className="text-xs sm:text-base text-forest-800/80 leading-relaxed">
                 Whether you are a student exploring life direction, an educator interested in value-based sessions, or a curious seeker, we are here to support your journey.
               </p>
             </div>
 
-            <div className="space-y-4">
-              <div className="bg-white p-6 rounded-2xl border border-gold-500/20 shadow-sm flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-forest-900 text-gold-400 flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5" />
+            <div className="space-y-3 sm:space-y-4">
+              <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gold-500/20 shadow-sm flex items-start gap-3.5 sm:gap-4">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-forest-900 text-gold-400 flex items-center justify-center shrink-0">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-lg font-bold text-forest-950">
+                  <h4 className="font-serif text-base sm:text-lg font-bold text-forest-950">
                     Geographic Focus
                   </h4>
-                  <p className="text-sm text-forest-800/80 mt-1">
+                  <p className="text-xs sm:text-sm text-forest-800/80 mt-1">
                     Chandigarh, Mohali & surrounding Tricity region. Interactive cohorts are also hosted virtually.
                   </p>
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl border border-gold-500/20 shadow-sm flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-forest-900 text-gold-400 flex items-center justify-center shrink-0">
-                  <Compass className="w-5 h-5" />
+              <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gold-500/20 shadow-sm flex items-start gap-3.5 sm:gap-4">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-forest-900 text-gold-400 flex items-center justify-center shrink-0">
+                  <Compass className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-lg font-bold text-forest-950">
+                  <h4 className="font-serif text-base sm:text-lg font-bold text-forest-950">
                     Transparency Notice
                   </h4>
-                  <p className="text-sm text-forest-800/80 mt-1">
+                  <p className="text-xs sm:text-sm text-forest-800/80 mt-1">
                     Evolve Club is an independent youth initiative. We maintain complete clarity regarding our voluntary coordination team and verified activities.
                   </p>
                 </div>
@@ -141,8 +141,8 @@ export const ContactPage = () => {
 
           {/* Right Column: Validated Contact Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white p-8 sm:p-10 rounded-3xl border border-gold-500/30 shadow-md">
-              <h3 className="font-serif text-2xl font-bold text-forest-950 mb-6">
+            <div className="bg-white p-5 sm:p-8 sm:p-10 rounded-2xl sm:rounded-3xl border border-gold-500/30 shadow-md">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-forest-950 mb-4 sm:mb-6">
                 Send a Direct Message
               </h3>
 

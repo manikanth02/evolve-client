@@ -222,28 +222,28 @@ export const GetInvolvedPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cream-50 text-forest-950 pt-24 pb-20">
+    <div className="min-h-screen bg-cream-50 text-forest-950 pt-20 sm:pt-24 pb-16 sm:pb-20">
       {/* 1. Header Banner */}
-      <section className="bg-forest-950 text-cream-50 py-20 relative overflow-hidden border-b border-gold-500/20">
+      <section className="bg-forest-950 text-cream-50 py-12 sm:py-20 relative overflow-hidden border-b border-gold-500/20">
         <div className="absolute inset-0 bg-grain opacity-25 pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-4 sm:space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
             <HeartHandshake className="w-3.5 h-3.5" />
             <span>Connect · Collaborate · Contribute</span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50 leading-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50 leading-tight">
             Get <span className="gold-text-gradient">Involved</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-sm sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
             Whether you wish to join a learning cohort, volunteer in community seva, mentor students, collaborate with your institution, or submit a general enquiry, there is a meaningful place for you in Evolve Club.
           </p>
         </div>
       </section>
 
       {/* 2. Four Compact Pathways Grid */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-10 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Ways to Participate"
           title="Choose Your Pathway"
@@ -252,7 +252,7 @@ export const GetInvolvedPage = () => {
           align="center"
         />
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-8 sm:mt-12 grid grid-cols-1 min-[350px]:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {pathways.map((p, idx) => {
             const Icon = p.icon;
             const isSelected = formData.interestType === p.interestType;
@@ -260,39 +260,39 @@ export const GetInvolvedPage = () => {
               <AnimatedSection
                 key={p.id}
                 delay={idx * 0.08}
-                className={`p-6 rounded-3xl border shadow-sm flex flex-col justify-between transition-all duration-200 ${
+                className={`p-4 sm:p-6 rounded-2xl sm:rounded-3xl border shadow-sm flex flex-col justify-between transition-all duration-200 ${
                   isSelected
                     ? 'bg-forest-900 text-cream-50 border-gold-500/60 shadow-md ring-2 ring-gold-400/30'
                     : 'bg-white text-forest-950 border-gold-500/20 hover:border-gold-500/40 hover:shadow-md'
                 }`}
               >
-                <div className="space-y-4">
-                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center border ${
+                <div className="space-y-3 sm:space-y-4">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center border ${
                     isSelected ? 'bg-forest-950 text-gold-400 border-gold-500/40' : p.accent
                   }`}>
-                    <Icon className="w-6 h-6" />
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <h4 className="font-serif text-xl font-bold">
+                  <h4 className="font-serif text-base sm:text-xl font-bold leading-snug">
                     {p.title}
                   </h4>
-                  <p className={`text-xs sm:text-sm leading-relaxed ${
+                  <p className={`text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-none ${
                     isSelected ? 'text-cream-200/80' : 'text-forest-800/80'
                   }`}>
                     {p.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-cream-200/40">
+                <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-cream-200/40">
                   <button
                     type="button"
                     onClick={() => handlePathwaySelect(p.interestType, p.title)}
-                    className={`text-xs font-semibold flex items-center gap-1.5 transition-colors ${
+                    className={`text-[11px] sm:text-xs font-semibold flex items-center gap-1.5 transition-colors ${
                       isSelected
                         ? 'text-gold-300 hover:text-gold-200'
                         : 'text-gold-600 hover:text-gold-700'
                     }`}
                   >
-                    <span>{isSelected ? '✓ Selected Pathway' : 'Select this pathway'}</span>
+                    <span>{isSelected ? '✓ Selected' : 'Select pathway'}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -303,13 +303,13 @@ export const GetInvolvedPage = () => {
       </section>
 
       {/* 3. Unified Shared Form Section */}
-      <section id="shared-form-section" className="py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white p-8 sm:p-12 rounded-3xl border border-gold-500/30 shadow-xl">
-          <div className="text-center max-w-xl mx-auto mb-10 space-y-2">
-            <span className="text-xs font-mono uppercase tracking-widest text-gold-600 font-bold block">
+      <section id="shared-form-section" className="py-8 sm:py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white p-5 sm:p-8 sm:p-12 rounded-2xl sm:rounded-3xl border border-gold-500/30 shadow-xl">
+          <div className="text-center max-w-xl mx-auto mb-6 sm:mb-10 space-y-1.5 sm:space-y-2">
+            <span className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-gold-600 font-bold block">
               Unified Expression of Interest
             </span>
-            <h2 className="font-serif text-3xl font-bold text-forest-950">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-forest-950">
               Submit Your Details
             </h2>
             <p className="text-xs sm:text-sm text-forest-800/80">
@@ -318,17 +318,17 @@ export const GetInvolvedPage = () => {
           </div>
 
           {submitSuccess ? (
-            <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-8 sm:p-10 text-center space-y-4">
-              <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center mx-auto">
-                <CheckCircle2 className="w-9 h-9" />
+            <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 sm:p-10 text-center space-y-4">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center mx-auto">
+                <CheckCircle2 className="w-8 h-8 sm:w-9 sm:h-9" />
               </div>
-              <h3 className="font-serif text-2xl font-bold text-emerald-950">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-emerald-950">
                 Submission Received!
               </h3>
-              <p className="text-sm text-emerald-800 max-w-md mx-auto leading-relaxed">
+              <p className="text-xs sm:text-sm text-emerald-800 max-w-md mx-auto leading-relaxed">
                 {submitMessage}
               </p>
-              <div className="pt-4">
+              <div className="pt-3 sm:pt-4">
                 <Button
                   variant="gold"
                   size="sm"
@@ -339,19 +339,19 @@ export const GetInvolvedPage = () => {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
               {errors.form && (
-                <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-700 text-sm">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-700 text-xs sm:text-sm">
                   {errors.form}
                 </div>
               )}
 
               {/* Interest Type Selector */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-forest-800 mb-2">
+                <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-forest-800 mb-2">
                   What are you interested in? <span className="text-red-500">*</span>
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                <div className="grid grid-cols-2 min-[480px]:grid-cols-3 sm:grid-cols-5 gap-1.5 sm:gap-2">
                   {[
                     { label: 'Programme', value: 'Programme' },
                     { label: 'Volunteering', value: 'Volunteering' },
@@ -365,7 +365,7 @@ export const GetInvolvedPage = () => {
                         key={opt.value}
                         type="button"
                         onClick={() => setFormData(prev => ({ ...prev, interestType: opt.value }))}
-                        className={`py-2 px-3 rounded-xl text-xs font-medium border text-center transition-all ${
+                        className={`py-2 px-2.5 sm:px-3 rounded-xl text-[11px] sm:text-xs font-medium border text-center transition-all ${
                           active
                             ? 'bg-forest-900 text-gold-400 border-gold-500/50 shadow-sm font-semibold'
                             : 'bg-cream-50 text-forest-800 border-forest-900/10 hover:border-gold-500/30'

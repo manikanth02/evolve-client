@@ -57,61 +57,61 @@ export const OurStoryPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-cream-50 text-forest-950 pt-24">
+    <div className="min-h-screen bg-cream-50 text-forest-950 pt-20 sm:pt-24">
       {/* Header Banner */}
-      <section className="bg-forest-950 text-cream-50 py-20 relative overflow-hidden border-b border-gold-500/20">
+      <section className="bg-forest-950 text-cream-50 py-12 sm:py-20 relative overflow-hidden border-b border-gold-500/20">
         <div className="absolute inset-0 bg-grain opacity-25" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-4 sm:space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
             <Compass className="w-3.5 h-3.5" />
             <span>Our Origins & Ethos</span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50">
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50 leading-tight">
             Why We Founded <span className="gold-text-gradient">Evolve Club</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-sm sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
             An independent youth empowerment movement dedicated to helping young minds cultivate character, clarity, and compassionate leadership.
           </p>
         </div>
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="py-10 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
           {/* Mission */}
-          <AnimatedSection className="bg-white p-8 sm:p-10 rounded-3xl border border-gold-500/30 shadow-sm flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-forest-900 text-gold-400 flex items-center justify-center">
-                <Target className="w-6 h-6" />
+          <AnimatedSection className="bg-white p-5 sm:p-8 sm:p-10 rounded-2xl sm:rounded-3xl border border-gold-500/30 shadow-sm flex flex-col justify-between">
+            <div className="space-y-3 sm:space-y-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-forest-900 text-gold-400 flex items-center justify-center">
+                <Target className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <h3 className="font-serif text-3xl font-bold text-forest-950">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-forest-950">
                 Our Mission
               </h3>
-              <p className="text-base text-forest-800/80 leading-relaxed">
+              <p className="text-xs sm:text-base text-forest-800/80 leading-relaxed">
                 To empower young individuals with practical wisdom, mental discipline, and ethical grounding, enabling them to make conscious choices, lead purposeful lives, and make meaningful contributions to society.
               </p>
             </div>
-            <div className="mt-8 pt-4 border-t border-cream-200 text-xs font-mono uppercase tracking-widest text-gold-600 font-semibold">
+            <div className="mt-6 sm:mt-8 pt-3 sm:pt-4 border-t border-cream-200 text-[11px] sm:text-xs font-mono uppercase tracking-widest text-gold-600 font-semibold">
               LEARN · GROW · SERVE · LEAD
             </div>
           </AnimatedSection>
 
           {/* Vision */}
-          <AnimatedSection delay={0.15} className="bg-forest-900 text-cream-50 p-8 sm:p-10 rounded-3xl border border-gold-500/40 shadow-forest-deep flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 border border-gold-500/40 flex items-center justify-center">
-                <Eye className="w-6 h-6" />
+          <AnimatedSection delay={0.15} className="bg-forest-900 text-cream-50 p-5 sm:p-8 sm:p-10 rounded-2xl sm:rounded-3xl border border-gold-500/40 shadow-forest-deep flex flex-col justify-between">
+            <div className="space-y-3 sm:space-y-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gold-500/20 text-gold-400 border border-gold-500/40 flex items-center justify-center">
+                <Eye className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <h3 className="font-serif text-3xl font-bold text-cream-50">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-cream-50">
                 Our Vision
               </h3>
-              <p className="text-base text-cream-200/90 leading-relaxed">
+              <p className="text-xs sm:text-base text-cream-200/90 leading-relaxed">
                 A generation of resilient, thoughtful leaders who possess both sharp intellectual competence and profound inner peace—leading not by domination, but by virtue, empathy, and service.
               </p>
             </div>
-            <div className="mt-8 pt-4 border-t border-forest-800 text-xs font-mono uppercase tracking-widest text-gold-400 font-semibold">
+            <div className="mt-6 sm:mt-8 pt-3 sm:pt-4 border-t border-forest-800 text-[11px] sm:text-xs font-mono uppercase tracking-widest text-gold-400 font-semibold">
               Purposeful Living & Lasting Transformation
             </div>
           </AnimatedSection>
@@ -119,7 +119,7 @@ export const OurStoryPage = () => {
       </section>
 
       {/* Why Evolve Club Exists & Personal Growth Philosophy */}
-      <section className="py-20 bg-cream-100 border-y border-gold-500/20">
+      <section className="py-10 sm:py-20 bg-cream-100 border-y border-gold-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="The Philosophy"
@@ -130,7 +130,7 @@ export const OurStoryPage = () => {
             align="center"
           />
 
-          <div className="mt-14 max-w-4xl mx-auto space-y-6 text-forest-900/90 text-base sm:text-lg leading-relaxed bg-white p-8 sm:p-12 rounded-3xl border border-cream-300 shadow-sm">
+          <div className="mt-8 sm:mt-14 max-w-4xl mx-auto space-y-4 sm:space-y-6 text-forest-900/90 text-xs sm:text-base lg:text-lg leading-relaxed bg-white p-5 sm:p-8 sm:p-12 rounded-2xl sm:rounded-3xl border border-cream-300 shadow-sm">
             <p>
               Youth is the most energetic, formative phase of human life. Yet today, young people face unprecedented challenges: algorithmic addiction, constant comparison on social platforms, existential confusion, and overwhelming anxiety about outcomes.
             </p>
@@ -145,7 +145,7 @@ export const OurStoryPage = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-10 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Guiding Principles"
           title="Our Core Values"
@@ -154,23 +154,23 @@ export const OurStoryPage = () => {
           align="center"
         />
 
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-8 sm:mt-14 grid grid-cols-1 min-[350px]:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {values.map((v, i) => {
             const Icon = v.icon;
             return (
               <AnimatedSection
                 key={i}
                 delay={i * 0.1}
-                className="bg-white p-6 rounded-2xl border border-gold-500/20 hover:border-gold-500/50 transition-all flex flex-col justify-between"
+                className="bg-white p-4 sm:p-6 rounded-2xl border border-gold-500/20 hover:border-gold-500/50 transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-forest-900 text-gold-400 flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5" />
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-forest-900 text-gold-400 flex items-center justify-center mb-3 sm:mb-4">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <h4 className="font-serif text-xl font-bold text-forest-950 mb-2">
+                  <h4 className="font-serif text-base sm:text-xl font-bold text-forest-950 mb-1.5 sm:mb-2">
                     {v.title}
                   </h4>
-                  <p className="text-sm text-forest-800/80 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-forest-800/80 leading-relaxed line-clamp-3 sm:line-clamp-none">
                     {v.desc}
                   </p>
                 </div>
@@ -181,7 +181,7 @@ export const OurStoryPage = () => {
       </section>
 
       {/* Visual Roadmap / Timeline of Journey */}
-      <section className="py-20 bg-forest-950 text-cream-50 border-t border-gold-500/20">
+      <section className="py-12 sm:py-20 bg-forest-950 text-cream-50 border-t border-gold-500/20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="The Journey"
@@ -191,7 +191,7 @@ export const OurStoryPage = () => {
             align="center"
           />
 
-          <div className="mt-16 space-y-8 relative before:absolute before:inset-0 before:left-8 md:before:left-1/2 before:w-0.5 before:bg-forest-800 before:-translate-x-1/2">
+          <div className="mt-10 sm:mt-16 space-y-6 sm:space-y-8 relative before:absolute before:inset-0 before:left-8 md:before:left-1/2 before:w-0.5 before:bg-forest-800 before:-translate-x-1/2">
             {milestones.map((m, idx) => {
               const isEven = idx % 2 === 0;
               return (
@@ -202,8 +202,8 @@ export const OurStoryPage = () => {
                     isEven ? 'md:flex-row-reverse' : ''
                   }`}
                 >
-                  <div className="w-full md:w-1/2 pl-16 md:pl-0 md:px-8">
-                    <div className="bg-forest-900 p-6 rounded-2xl border border-forest-700/80 hover:border-gold-500/40 transition-all space-y-2">
+                  <div className="w-full md:w-1/2 pl-14 sm:pl-16 md:pl-0 md:px-8">
+                    <div className="bg-forest-900 p-4 sm:p-6 rounded-2xl border border-forest-700/80 hover:border-gold-500/40 transition-all space-y-2">
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-mono font-bold text-gold-400 uppercase">
                           {m.stage}

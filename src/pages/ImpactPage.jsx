@@ -34,28 +34,28 @@ export const ImpactPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-cream-50 text-forest-950 pt-24">
+    <div className="min-h-screen bg-cream-50 text-forest-950 pt-20 sm:pt-24">
       {/* Header Banner */}
-      <section className="bg-forest-950 text-cream-50 py-20 relative overflow-hidden border-b border-gold-500/20">
+      <section className="bg-forest-950 text-cream-50 py-12 sm:py-20 relative overflow-hidden border-b border-gold-500/20">
         <div className="absolute inset-0 bg-grain opacity-20" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-4 sm:space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
             <Award className="w-3.5 h-3.5" />
             <span>Field Work & Transparency</span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50">
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50 leading-tight">
             Our Genuine <span className="gold-text-gradient">Social Impact</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-sm sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
             Witness how young participants channel inner character into tangible community service, environmental stewardship, and peer upliftment.
           </p>
         </div>
       </section>
 
       {/* Verified Metrics Section */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-10 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Verified Metrics"
           title="Field Metrics & Statistics"
@@ -64,11 +64,11 @@ export const ImpactPage = () => {
           align="center"
         />
 
-        <div className="mt-14">
+        <div className="mt-8 sm:mt-14">
           {loading ? (
             <LoadingIndicator text="Fetching verified impact metrics..." />
           ) : impactData.hasVerifiedData && impactData.metrics.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 min-[350px]:grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-6">
               {impactData.metrics.map((m, idx) => (
                 <ImpactCard key={idx} metric={m} />
               ))}
@@ -86,7 +86,7 @@ export const ImpactPage = () => {
       </section>
 
       {/* Activities & Initiatives Showcase */}
-      <section className="py-20 bg-cream-100 border-t border-gold-500/20">
+      <section className="py-10 sm:py-20 bg-cream-100 border-t border-gold-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="On The Ground"
@@ -96,7 +96,7 @@ export const ImpactPage = () => {
             align="center"
           />
 
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="mt-8 sm:mt-14 grid grid-cols-1 min-[350px]:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {activities.map((act, i) => (
               <AnimatedSection
                 key={act.id || i}

@@ -91,7 +91,7 @@ export const TransformationSequence = () => {
   const activeStage = stages[activeStageIndex];
 
   return (
-    <section className="relative py-24 bg-forest-950 overflow-hidden border-y border-gold-500/20">
+    <section className="relative py-12 sm:py-24 bg-forest-950 overflow-hidden border-y border-gold-500/20">
       {/* Background ambient elements */}
       <div className="absolute inset-0 bg-grain pointer-events-none opacity-40" />
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -99,21 +99,21 @@ export const TransformationSequence = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase mb-3.5 border bg-gold-500/10 border-gold-500/30 text-gold-400">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase mb-3 border bg-gold-500/10 border-gold-500/30 text-gold-400">
             <Sparkles className="w-3.5 h-3.5" />
             <span>The Transformation Journey</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-cream-50 tracking-tight leading-tight">
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-cream-50 tracking-tight leading-tight">
             How Young Minds <span className="gold-text-gradient">Evolve</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-cream-200/80 leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-xs sm:text-lg text-cream-200/80 leading-relaxed max-w-2xl mx-auto font-light">
             Personal transformation is not an accident—it is a progressive evolution from internal awareness to purposeful external service.
           </p>
         </div>
 
         {/* Interactive Progress Path */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12">
           {/* Progress Bar Line */}
           <div className="hidden md:block relative mb-8">
             <div className="h-1 bg-forest-800 rounded-full w-full absolute top-1/2 -translate-y-1/2" />
@@ -124,7 +124,7 @@ export const TransformationSequence = () => {
           </div>
 
           {/* Stepper Buttons */}
-          <div className="grid grid-cols-5 gap-2 sm:gap-4">
+          <div className="grid grid-cols-5 gap-1.5 sm:gap-4">
             {stages.map((stage, idx) => {
               const Icon = stage.icon;
               const isActive = idx === activeStageIndex;
@@ -134,16 +134,17 @@ export const TransformationSequence = () => {
                 <button
                   key={stage.id}
                   onClick={() => setActiveStageIndex(idx)}
-                  className={`flex flex-col items-center p-2 sm:p-4 rounded-2xl transition-all duration-300 group text-center focus:outline-none ${
+                  className={`flex flex-col items-center p-1.5 sm:p-4 rounded-xl sm:rounded-2xl transition-all duration-300 group text-center focus:outline-none ${
                     isActive
                       ? 'bg-forest-900 border-2 border-gold-400 shadow-gold-glow scale-105'
                       : isPast
                       ? 'bg-forest-900/60 border border-gold-500/30 opacity-90 hover:opacity-100'
                       : 'bg-forest-900/30 border border-forest-800/80 opacity-60 hover:opacity-90'
                   }`}
+                  aria-label={`Stage ${stage.step}: ${stage.name}`}
                 >
                   <div
-                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mb-2 transition-transform duration-300 ${
+                    className={`w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center mb-1 sm:mb-2 transition-transform duration-300 ${
                       isActive
                         ? 'bg-gold-500 text-forest-950 scale-110'
                         : isPast
@@ -151,12 +152,12 @@ export const TransformationSequence = () => {
                         : 'bg-forest-800 text-cream-200/60 group-hover:text-cream-100'
                     }`}
                   >
-                    <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <Icon className="w-3.5 h-3.5 sm:w-6 sm:h-6" />
                   </div>
-                  <span className={`text-[11px] sm:text-xs font-mono font-semibold tracking-wider ${isActive ? 'text-gold-400' : 'text-cream-200/40'}`}>
+                  <span className={`text-[9px] sm:text-xs font-mono font-semibold tracking-wider ${isActive ? 'text-gold-400' : 'text-cream-200/40'}`}>
                     STEP {stage.step}
                   </span>
-                  <span className={`text-xs sm:text-sm font-serif font-bold truncate max-w-full ${isActive ? 'text-cream-50' : 'text-cream-200/70'}`}>
+                  <span className={`text-[10px] sm:text-sm font-serif font-bold truncate max-w-full ${isActive ? 'text-cream-50' : 'text-cream-200/70'}`}>
                     {stage.name}
                   </span>
                 </button>
@@ -173,7 +174,7 @@ export const TransformationSequence = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="bg-gradient-to-br from-forest-900/90 to-forest-950 border border-gold-500/30 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-forest-deep relative overflow-hidden"
+            className="bg-gradient-to-br from-forest-900/90 to-forest-950 border border-gold-500/30 rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-12 shadow-forest-deep relative overflow-hidden"
           >
             {/* Ambient accent inside card */}
             <div className={`absolute top-0 right-0 w-80 h-80 rounded-full blur-3xl pointer-events-none bg-gradient-to-br ${activeStage.accent}`} />

@@ -115,21 +115,21 @@ export const ForOrganisationsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cream-50 text-forest-950 pt-24 pb-20">
+    <div className="min-h-screen bg-cream-50 text-forest-950 pt-20 sm:pt-24 pb-14 sm:pb-20">
       {/* Header Banner */}
-      <section className="bg-forest-950 text-cream-50 py-20 relative overflow-hidden border-b border-gold-500/20">
+      <section className="bg-forest-950 text-cream-50 py-12 sm:py-20 relative overflow-hidden border-b border-gold-500/20">
         <div className="absolute inset-0 bg-grain opacity-20 pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-4 sm:space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
             <Building2 className="w-3.5 h-3.5" />
             <span>Corporate & Institutional Collaborations</span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50 leading-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50 leading-tight">
             Empowering Teams Through <span className="gold-text-gradient">Wisdom & Character</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-base sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
             Practical workshops for founders, HR leaders, and managers in Chandigarh, Mohali, and beyond. Grounded in mental discipline, composure, and ethical leadership.
           </p>
 
@@ -139,6 +139,7 @@ export const ForOrganisationsPage = () => {
               variant="gold"
               size="md"
               icon={ArrowRight}
+              className="w-full sm:w-auto min-h-[44px] justify-center"
             >
               Collaborate With Us
             </Button>
@@ -147,7 +148,7 @@ export const ForOrganisationsPage = () => {
       </section>
 
       {/* Workshop Modules Grid */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Tailored Modules"
           title="Core Workshop Offerings"
@@ -156,31 +157,32 @@ export const ForOrganisationsPage = () => {
           align="center"
         />
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-8 sm:mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {workshopModules.map((module, i) => (
             <AnimatedSection
               key={i}
               delay={i * 0.1}
-              className="bg-white p-8 rounded-3xl border border-gold-500/25 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+              className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-gold-500/25 shadow-sm hover:shadow-md transition-all flex flex-col justify-between h-full"
             >
-              <div className="space-y-4">
-                <span className="text-xs font-mono font-semibold uppercase text-gold-600 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20 inline-block">
+              <div className="space-y-3 sm:space-y-4">
+                <span className="text-[11px] sm:text-xs font-mono font-semibold uppercase text-gold-600 bg-gold-500/10 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full border border-gold-500/20 inline-block">
                   {module.tag}
                 </span>
-                <h4 className="font-serif text-2xl font-bold text-forest-950">
+                <h4 className="font-serif text-xl sm:text-2xl font-bold text-forest-950">
                   {module.title}
                 </h4>
-                <p className="text-sm text-forest-800/80 leading-relaxed">
+                <p className="text-xs sm:text-sm text-forest-800/80 leading-relaxed font-light">
                   {module.desc}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-cream-200 flex items-center justify-between text-xs text-forest-700/60 font-medium">
+              <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-cream-200 flex items-center justify-between text-xs text-forest-700/60 font-medium">
                 <span>Online / Offline</span>
                 <Button
                   to={`/get-involved?interest=Institutional+Collaboration&programme=${encodeURIComponent(module.title)}`}
                   variant="outline"
                   size="sm"
+                  className="min-h-[38px]"
                 >
                   Enquire
                 </Button>
@@ -191,22 +193,22 @@ export const ForOrganisationsPage = () => {
       </section>
 
       {/* Delivery Formats Notice */}
-      <section className="py-14 bg-cream-100 border-y border-gold-500/20">
+      <section className="py-10 sm:py-14 bg-cream-100 border-y border-gold-500/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-forest-900 text-cream-50 p-8 rounded-3xl border border-gold-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="space-y-2 text-center md:text-left">
-              <h4 className="font-serif text-xl font-bold text-cream-50">
+          <div className="bg-forest-900 text-cream-50 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-gold-500/30 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+            <div className="space-y-1.5 sm:space-y-2 text-center md:text-left">
+              <h4 className="font-serif text-lg sm:text-xl font-bold text-cream-50">
                 Flexible Delivery Options
               </h4>
-              <p className="text-sm text-cream-200/80">
+              <p className="text-xs sm:text-sm text-cream-200/80 font-light">
                 Sessions can be conducted on-site in Chandigarh/Mohali or via interactive virtual cohorts across India.
               </p>
             </div>
-            <div className="flex items-center gap-3 shrink-0">
-              <span className="px-3.5 py-1.5 rounded-full bg-forest-950 border border-gold-500/30 text-xs font-mono text-gold-400">
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 shrink-0">
+              <span className="px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-forest-950 border border-gold-500/30 text-[11px] sm:text-xs font-mono text-gold-400">
                 On-site Workshops
               </span>
-              <span className="px-3.5 py-1.5 rounded-full bg-forest-950 border border-gold-500/30 text-xs font-mono text-gold-400">
+              <span className="px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-forest-950 border border-gold-500/30 text-[11px] sm:text-xs font-mono text-gold-400">
                 Virtual Cohorts
               </span>
             </div>
@@ -215,32 +217,32 @@ export const ForOrganisationsPage = () => {
       </section>
 
       {/* Corporate Enquiry Form */}
-      <section className="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white p-8 sm:p-12 rounded-3xl border border-gold-500/30 shadow-lg">
-          <div className="text-center max-w-xl mx-auto mb-10 space-y-2">
-            <h3 className="font-serif text-3xl font-bold text-forest-950">
+      <section className="py-12 sm:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white p-5 sm:p-8 sm:p-12 rounded-2xl sm:rounded-3xl border border-gold-500/30 shadow-lg">
+          <div className="text-center max-w-xl mx-auto mb-6 sm:mb-10 space-y-1.5 sm:space-y-2">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-forest-950">
               Request An Organisation Consultation
             </h3>
-            <p className="text-sm text-forest-800/80">
+            <p className="text-xs sm:text-sm text-forest-800/80 font-light">
               Share your team's objectives and our academic coordinators will provide a customized module outline and schedule.
             </p>
           </div>
 
           {submitSuccess ? (
-            <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-8 text-center space-y-4">
-              <div className="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center mx-auto">
-                <CheckCircle2 className="w-8 h-8" />
+            <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 sm:p-8 text-center space-y-3 sm:space-y-4">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center mx-auto">
+                <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8" />
               </div>
-              <h4 className="font-serif text-2xl font-bold text-emerald-900">
+              <h4 className="font-serif text-xl sm:text-2xl font-bold text-emerald-900">
                 Enquiry Successfully Received
               </h4>
-              <p className="text-sm text-emerald-800 max-w-md mx-auto">
+              <p className="text-xs sm:text-sm text-emerald-800 max-w-md mx-auto leading-relaxed">
                 {submitMessage}
               </p>
               <button
                 type="button"
                 onClick={() => setSubmitSuccess(false)}
-                className="text-xs font-semibold uppercase tracking-wider text-emerald-700 underline mt-4"
+                className="text-xs font-semibold uppercase tracking-wider text-emerald-700 underline mt-3"
               >
                 Submit another inquiry
               </button>

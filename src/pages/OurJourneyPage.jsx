@@ -157,28 +157,28 @@ export const OurJourneyPage = () => {
     : cloudinaryImages.filter(img => img.category.toLowerCase() === selectedActivityCategory.toLowerCase());
 
   return (
-    <div className="min-h-screen bg-cream-50 text-forest-950 pt-24 pb-12">
+    <div className="min-h-screen bg-cream-50 text-forest-950 pt-20 sm:pt-24 pb-12">
       {/* Hero / Header Banner */}
-      <section className="bg-forest-950 text-cream-50 py-20 relative overflow-hidden border-b border-gold-500/20">
+      <section className="bg-forest-950 text-cream-50 py-12 sm:py-20 relative overflow-hidden border-b border-gold-500/20">
         <div className="absolute inset-0 bg-grain opacity-25 pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-4 sm:space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase bg-gold-500/10 border border-gold-500/30 text-gold-400">
             <Compass className="w-3.5 h-3.5" />
             <span>Our Journey · Authentic Activities · Verified Impact</span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50 leading-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50 leading-tight">
             Who We Are & <span className="gold-text-gradient">How We Grow</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-base sm:text-xl text-cream-200/90 max-w-3xl mx-auto font-light leading-relaxed">
             An independent youth empowerment initiative dedicated to character development, practical wisdom, emotional composure, and selfless service.
           </p>
         </div>
       </section>
 
       {/* SECTION A: Our Purpose & Core Pillars */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-20 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Our Purpose"
           title="Bridging Competence and"
@@ -189,11 +189,11 @@ export const OurJourneyPage = () => {
         />
 
         {/* Concise Purpose Statement */}
-        <AnimatedSection className="mt-12 max-w-4xl mx-auto bg-white p-8 sm:p-12 rounded-3xl border border-gold-500/30 shadow-sm text-center space-y-5">
-          <p className="text-base sm:text-lg text-forest-900 leading-relaxed font-light">
+        <AnimatedSection className="mt-8 sm:mt-12 max-w-4xl mx-auto bg-white p-5 sm:p-12 rounded-2xl sm:rounded-3xl border border-gold-500/30 shadow-sm text-center space-y-4 sm:space-y-5">
+          <p className="text-sm sm:text-lg text-forest-900 leading-relaxed font-light">
             Evolve Club exists to help youth build <strong>enduring mental anchors</strong>. In an era saturated with algorithmic distraction, social comparison, and outcome obsession, we synthesize the practical psychology of the <strong>Bhagavad Gita</strong> into experiential cohorts for self-mastery, ethical leadership, and meaningful community contribution.
           </p>
-          <div className="pt-4 flex items-center justify-center gap-4 text-xs font-mono uppercase tracking-widest text-gold-600 font-semibold">
+          <div className="pt-2 sm:pt-4 flex items-center justify-center gap-3 sm:gap-4 text-[11px] sm:text-xs font-mono uppercase tracking-widest text-gold-600 font-semibold">
             <span>LEARN</span>
             <span className="text-forest-400">·</span>
             <span>GROW</span>
@@ -204,24 +204,24 @@ export const OurJourneyPage = () => {
           </div>
         </AnimatedSection>
 
-        {/* 4 Pillars Grid */}
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 4 Pillars Grid - 2 columns on mobile */}
+        <div className="mt-8 sm:mt-14 grid grid-cols-1 min-[350px]:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {corePillars.map((p, idx) => {
             const Icon = p.icon;
             return (
               <AnimatedSection
                 key={idx}
                 delay={idx * 0.1}
-                className="bg-white p-6 sm:p-8 rounded-2xl border border-gold-500/20 shadow-sm flex flex-col justify-between hover:border-gold-500/40 hover:shadow-md transition-all"
+                className="bg-white p-4 sm:p-8 rounded-xl sm:rounded-2xl border border-gold-500/20 shadow-sm flex flex-col justify-between hover:border-gold-500/40 hover:shadow-md transition-all h-full"
               >
-                <div className="space-y-3">
-                  <div className="w-11 h-11 rounded-xl bg-forest-900 text-gold-400 flex items-center justify-center">
-                    <Icon className="w-5 h-5" />
+                <div className="space-y-2.5 sm:space-y-3">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-forest-900 text-gold-400 flex items-center justify-center">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-forest-950">
+                  <h3 className="font-serif text-base sm:text-xl font-bold text-forest-950">
                     {p.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-forest-800/80 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-forest-800/80 leading-relaxed font-light">
                     {p.desc}
                   </p>
                 </div>
@@ -232,8 +232,8 @@ export const OurJourneyPage = () => {
       </section>
 
       {/* SECTION B: Journey Milestones & Real Activity Photographs */}
-      <section className="py-20 bg-cream-100 border-t border-gold-500/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-20 bg-cream-100 border-t border-gold-500/20">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <SectionHeading
             badge="The Evolution"
             title="Milestones of"
@@ -243,13 +243,13 @@ export const OurJourneyPage = () => {
             align="center"
           />
 
-          {/* Milestones Progression Grid */}
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Milestones Progression Grid - 2 columns on mobile */}
+          <div className="mt-8 sm:mt-14 grid grid-cols-1 min-[350px]:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {journeyMilestones.map((m, idx) => (
               <AnimatedSection
                 key={idx}
                 delay={idx * 0.1}
-                className="bg-white rounded-3xl overflow-hidden border border-gold-500/20 shadow-sm flex flex-col justify-between"
+                className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-gold-500/20 shadow-sm flex flex-col justify-between h-full"
               >
                 <div>
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-950">
@@ -259,21 +259,21 @@ export const OurJourneyPage = () => {
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
-                    <div className="absolute top-3 left-3">
-                      <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-forest-900/90 text-gold-400 border border-gold-500/30">
+                    <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3">
+                      <span className="px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-mono font-bold bg-forest-900/90 text-gold-400 border border-gold-500/30">
                         {m.phase}
                       </span>
                     </div>
                   </div>
 
-                  <div className="p-6 space-y-2">
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-gold-600 font-semibold block">
+                  <div className="p-4 sm:p-6 space-y-1.5 sm:space-y-2">
+                    <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-gold-600 font-semibold block">
                       {m.tag}
                     </span>
-                    <h3 className="font-serif text-xl font-bold text-forest-950 leading-snug">
+                    <h3 className="font-serif text-base sm:text-xl font-bold text-forest-950 leading-snug">
                       {m.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-forest-800/80 leading-relaxed pt-1">
+                    <p className="text-xs sm:text-sm text-forest-800/80 leading-relaxed pt-1 font-light line-clamp-3 sm:line-clamp-none">
                       {m.desc}
                     </p>
                   </div>
@@ -285,30 +285,30 @@ export const OurJourneyPage = () => {
       </section>
 
       {/* Real Activity Gallery (Curated Authentic Images) */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+      <section className="py-12 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-gold-500/10 text-gold-600 border border-gold-500/30 mb-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-mono uppercase tracking-wider bg-gold-500/10 text-gold-600 border border-gold-500/30 mb-2 sm:mb-3">
               <Camera className="w-3.5 h-3.5" />
               <span>Authentic Field Photography</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest-950">
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-forest-950">
               Activities & Community Dialogues
             </h2>
-            <p className="text-sm text-forest-800/80 mt-1 max-w-xl">
+            <p className="text-xs sm:text-sm text-forest-800/80 mt-1 max-w-xl font-light">
               Photographs from our interactive seminars, reflection circles, and community drives in Chandigarh and Mohali.
             </p>
           </div>
 
           {/* Filter Pills */}
-          <div className="flex flex-wrap gap-2 shrink-0">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 shrink-0">
             {activityCategories.map((cat) => {
               const active = selectedActivityCategory === cat;
               return (
                 <button
                   key={cat}
                   onClick={() => setSelectedActivityCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all ${
+                  className={`px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-wide transition-all ${
                     active
                       ? 'bg-forest-900 text-gold-400 border border-gold-500/50 shadow-sm'
                       : 'bg-white text-forest-800 hover:bg-forest-900/5 border border-forest-800/20'
@@ -322,7 +322,7 @@ export const OurJourneyPage = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {filteredActivities.map((img) => (
             <AnimatedSection
               key={img.id}
@@ -336,23 +336,23 @@ export const OurJourneyPage = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-transparent to-transparent opacity-60" />
-                <div className="absolute top-3 left-3">
-                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-forest-900/90 text-gold-400 border border-gold-500/30">
+                <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3">
+                  <span className="px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-medium bg-forest-900/90 text-gold-400 border border-gold-500/30">
                     {img.category}
                   </span>
                 </div>
               </div>
 
-              <div className="p-5 space-y-2 flex-1 flex flex-col justify-between">
+              <div className="p-4 sm:p-5 space-y-1.5 sm:space-y-2 flex-1 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-1.5 text-[11px] font-mono text-gold-600 mb-1">
-                    <MapPin className="w-3 h-3 text-gold-600" />
+                  <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-mono text-gold-600 mb-1">
+                    <MapPin className="w-3 h-3 text-gold-600 shrink-0" />
                     <span>{img.location || 'Chandigarh & Mohali'}</span>
                   </div>
-                  <h4 className="font-serif text-lg font-bold text-forest-950 leading-snug">
+                  <h4 className="font-serif text-base sm:text-lg font-bold text-forest-950 leading-snug">
                     {img.title}
                   </h4>
-                  <p className="text-xs text-forest-800/80 leading-relaxed mt-1">
+                  <p className="text-xs text-forest-800/80 leading-relaxed mt-1 font-light line-clamp-2 sm:line-clamp-none">
                     {img.caption || img.alt}
                   </p>
                 </div>
@@ -363,7 +363,7 @@ export const OurJourneyPage = () => {
       </section>
 
       {/* SECTION C: Verified Collaborations & Institutional Engagements */}
-      <section className="py-20 bg-cream-100 border-t border-gold-500/20">
+      <section className="py-12 sm:py-20 bg-cream-100 border-t border-gold-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Verified Collaborations"
@@ -374,12 +374,12 @@ export const OurJourneyPage = () => {
             align="center"
           />
 
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="mt-8 sm:mt-14 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
             {verifiedCollaborations.map((collab, i) => (
               <AnimatedSection
                 key={i}
                 delay={i * 0.1}
-                className="bg-white rounded-3xl overflow-hidden border border-gold-500/25 shadow-sm flex flex-col justify-between"
+                className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-gold-500/25 shadow-sm flex flex-col justify-between h-full"
               >
                 <div>
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-forest-950">
@@ -389,34 +389,34 @@ export const OurJourneyPage = () => {
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-3 left-3">
-                      <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-forest-900/90 text-gold-400 border border-gold-500/30">
+                    <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-medium bg-forest-900/90 text-gold-400 border border-gold-500/30">
                         {collab.type}
                       </span>
                     </div>
                   </div>
 
-                  <div className="p-6 space-y-3">
+                  <div className="p-4 sm:p-6 space-y-2 sm:space-y-3">
                     <div className="flex items-center justify-between text-xs text-forest-700/70 font-mono">
                       <span className="flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-gold-600" />
+                        <MapPin className="w-3.5 h-3.5 text-gold-600 shrink-0" />
                         {collab.location}
                       </span>
                       <span>{collab.date}</span>
                     </div>
 
-                    <h3 className="font-serif text-xl font-bold text-forest-950 leading-snug">
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-forest-950 leading-snug">
                       {collab.name}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-forest-800/80 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-forest-800/80 leading-relaxed font-light">
                       {collab.description}
                     </p>
                   </div>
                 </div>
 
-                <div className="p-6 pt-0 border-t border-cream-200 mt-4">
-                  <div className="pt-3 flex items-center justify-between">
+                <div className="p-4 sm:p-6 pt-0 border-t border-cream-200 mt-3 sm:mt-4">
+                  <div className="pt-2.5 sm:pt-3 flex items-center justify-between">
                     <span className="text-[11px] font-mono text-gold-600 font-semibold uppercase flex items-center gap-1">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       <span>Verified Activity</span>
@@ -427,7 +427,7 @@ export const OurJourneyPage = () => {
             ))}
           </div>
 
-          <div className="mt-12 max-w-2xl mx-auto text-center p-4 rounded-2xl bg-forest-900 text-cream-100 text-xs sm:text-sm border border-gold-500/30">
+          <div className="mt-8 sm:mt-12 max-w-2xl mx-auto text-center p-4 rounded-xl sm:rounded-2xl bg-forest-900 text-cream-100 text-xs sm:text-sm border border-gold-500/30">
             <span>
               Colleges, universities, or organisations interested in bringing a character workshop to their campus can connect through our{' '}
               <Link to="/get-involved?interest=Institutional+Collaboration" className="text-gold-300 font-semibold underline hover:text-gold-200">
@@ -439,7 +439,7 @@ export const OurJourneyPage = () => {
       </section>
 
       {/* SECTION D: Our Verified Impact Indicators */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Evidence-Based Impact"
           title="Genuine Indicators of"
@@ -449,7 +449,7 @@ export const OurJourneyPage = () => {
           align="center"
         />
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-8 sm:mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {[
             {
               title: 'Weekly Reflection Circles',
@@ -475,22 +475,22 @@ export const OurJourneyPage = () => {
               <AnimatedSection
                 key={idx}
                 delay={idx * 0.1}
-                className="bg-white p-8 rounded-3xl border border-gold-500/25 shadow-sm flex flex-col justify-between"
+                className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-gold-500/25 shadow-sm flex flex-col justify-between h-full"
               >
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-forest-900 text-gold-400 flex items-center justify-center">
-                    <Icon className="w-6 h-6" />
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-forest-900 text-gold-400 flex items-center justify-center">
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-forest-950">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-forest-950">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-forest-800/80 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-forest-800/80 leading-relaxed font-light">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-cream-200">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-gold-600 block">
+                <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-cream-200">
+                  <span className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-gold-600 block">
                     {item.metric}
                   </span>
                 </div>
@@ -499,7 +499,7 @@ export const OurJourneyPage = () => {
           })}
         </div>
 
-        <div className="mt-8 bg-forest-900/5 border border-forest-900/10 rounded-2xl p-4 text-center text-xs text-forest-800/80 max-w-3xl mx-auto">
+        <div className="mt-6 sm:mt-8 bg-forest-900/5 border border-forest-900/10 rounded-xl sm:rounded-2xl p-3.5 sm:p-4 text-center text-[11px] sm:text-xs text-forest-800/80 max-w-3xl mx-auto">
           <span>
             Detailed quantitative auditing for the current academic session will be published following complete cohort evaluations.
           </span>
@@ -507,35 +507,35 @@ export const OurJourneyPage = () => {
       </section>
 
       {/* SECTION E: Genuine Testimonials / Participant Voices */}
-      <section className="py-20 bg-cream-100 border-t border-gold-500/20">
+      <section className="py-12 sm:py-20 bg-cream-100 border-t border-gold-500/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-3 mb-12">
+          <div className="text-center space-y-2 sm:space-y-3 mb-8 sm:mb-12">
             <span className="text-xs font-mono uppercase tracking-widest text-gold-600 font-semibold block">
               Participant Reflections
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest-950">
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-forest-950">
               Voices from the Cohorts
             </h2>
-            <p className="text-sm sm:text-base text-forest-800/80 max-w-xl mx-auto">
+            <p className="text-xs sm:text-base text-forest-800/80 max-w-xl mx-auto font-light">
               Voluntarily consented feedback from youth navigating academic pressure, focus, and purposeful action.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {participantReflections.map((ref, idx) => (
               <AnimatedSection
                 key={idx}
                 delay={idx * 0.1}
-                className="bg-white p-8 rounded-3xl border border-gold-500/20 shadow-sm flex flex-col justify-between"
+                className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-gold-500/20 shadow-sm flex flex-col justify-between h-full"
               >
-                <p className="font-serif text-base text-forest-950 italic leading-relaxed mb-6">
+                <p className="font-serif text-sm sm:text-base text-forest-950 italic leading-relaxed mb-4 sm:mb-6">
                   "{ref.quote}"
                 </p>
-                <div className="pt-4 border-t border-cream-200 space-y-0.5">
+                <div className="pt-3 sm:pt-4 border-t border-cream-200 space-y-0.5">
                   <span className="text-xs font-bold text-forest-900 block">
                     {ref.role}
                   </span>
-                  <span className="text-[11px] text-forest-700/60 font-mono block">
+                  <span className="text-[10px] sm:text-[11px] text-forest-700/60 font-mono block">
                     {ref.context}
                   </span>
                 </div>
